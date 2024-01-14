@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main<T> {
+    public static void main(String[] args) {
+
+        int arr[] = {5, 7, 3, 9, 23, 41, 37, 9, 0, 2};
+        Scanner sc = new Scanner(System.in);
+        int input = sc.nextInt();
+
+        try {
+            System.out.println(arr[input]);
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            boolean True = true;
+            while (True) {
+                // Hata durumunda kullanıcıya mesaj ver ve doğru bir giriş yapılana kadar tekrar sor.
+                System.out.println("Girdiğiniz sayı dizinin boyutunu aşıyor. Lütfen 0 ile " + (arr.length - 1) + " arasında bir sayı girin");
+                input = sc.nextInt();
+                if ((input >= 0) && (input <= (arr.length - 1))) {
+                    System.out.println(arr[input]);
+                    True = false;
+                }
+            }
+        }
+    }
+}
